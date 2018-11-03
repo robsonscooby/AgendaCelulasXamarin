@@ -13,7 +13,7 @@
                 </StackLayout>
                 <Entry x:Name="txtEndereco" Placeholder="Endereço"/>
                 <Label Text="Descrição"/>
-                <Editor x:Name="txtDescricao" HeightRequest="200"/>
+                <Editor x:Name="txtDescricao" HeightRequest="200" BackgroundColor="Silver"/>
                 <Button x:Name="btSalvar" Clicked="Salvar"/>
             </StackLayout>
         </ScrollView>
