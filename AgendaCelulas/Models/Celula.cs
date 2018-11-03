@@ -19,5 +19,8 @@ namespace AgendaCelulas.Models
 
         [Column("descricao")]
         public string Descricao { get; set; }
+
+        [Column("favorito")]
+        public string Favorito { get; set; } = "favorite";
     }
 }

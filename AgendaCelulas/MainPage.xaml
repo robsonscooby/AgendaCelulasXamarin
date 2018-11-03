@@ -8,7 +8,5 @@
            <local:HomePage/> 
         </x:Arguments>
     </NavigationPage>       
-    
-    <local:FavoritePage Title="Favoritos" Icon="favorite"/>
     <local:AboutPage Title="Sobre" Icon="about"/>
 </TabbedPage>

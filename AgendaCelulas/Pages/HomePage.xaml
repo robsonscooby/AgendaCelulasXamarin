@@ -8,7 +8,11 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Pesquisar" TextChanged="Pesquisar"/>
+            <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="StartAndExpand">
+                <Switch x:Name="Filtro" IsToggled="false" Toggled="FiltroFavorito"/>
+                <Label Text="Filtrar Favoritos" VerticalOptions="Center"/>
+            </StackLayout>
+            <Entry Placeholder="Pesquisar" TextChanged="Pesquisar" FontSize="24" FontAttributes="Bold"/>
             <ListView x:Name="ListaCelulas" HasUnevenRows="true">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -18,11 +22,14 @@
                                      Text="Detalhe" />
                                  <MenuItem Clicked="OnUpdate" CommandParameter="{Binding .}"
                                      Text="Editar" />
-                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                 <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
                                      Text="Excluir" IsDestructive="True" />
                             </ViewCell.ContextActions>
-                         <StackLayout Orientation="Vertical" Margin="10">
-                                
+                            <StackLayout Orientation="Horizontal" Margin="5">
+                                <StackLayout HorizontalOptions="Fill" VerticalOptions="CenterAndExpand">
+                                    <Button Image="{Binding Favorito}" Clicked="Favorito" CommandParameter="{Binding .}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Margin="5">
                                 <Label Text="{Binding Nome}"
                                        FontAttributes="Bold"
                                        FontSize="15"/>
@@ -31,13 +38,12 @@
                                        FontSize="10"/>
                                 <Label Text="{Binding Endereco}"
                                        FontSize="10"/>
-                            
+                            </StackLayout>
                         </StackLayout>
                       </ViewCell> 
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-<!--            <Button Command="{Binding AceitarCelulaCmd}" Text="Atender!"></Button>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

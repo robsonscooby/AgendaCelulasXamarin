@@ -9,6 +9,8 @@ namespace AgendaCelulas.Pages
 {
     public partial class HomePage : ContentPage
     {
+        private const string Favorite = "favorite";
+        private const string FavoriteT = "favoriteT";
         private AcessoBanco acessoBanco;
         public List<Celula> Lista { get; set; }
 
@@ -37,13 +39,17 @@ namespace AgendaCelulas.Pages
             Navigation.PushAsync(new DetalhePage(mi.CommandParameter as Celula));
         }
 
-        public void OnDelete(object sender, EventArgs e)
+        public async void OnDelete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
             Celula cel = mi.CommandParameter as Celula;
-            DisplayAlert("Notificação", "Deseja excluir Celula: " + cel.Nome, "Excluir", "Cancelar");
-            acessoBanco.Excluir(cel);
-            ConsultarCelulas();
+
+            var result = await DisplayAlert("Notificação", "Deseja excluir Celula: " + cel.Nome, "Ok", "Cancelar");
+            if(result)
+            {
+                acessoBanco.Excluir(cel);
+                ConsultarCelulas();
+            }
         }
 
         public void OnUpdate(object sender, EventArgs e)
@@ -60,6 +66,33 @@ namespace AgendaCelulas.Pages
         public void Pesquisar(object sender, TextChangedEventArgs e)
         {
             ListaCelulas.ItemsSource = Lista.Where(a=> a.Nome.Contains(e.NewTextValue)).ToList();
+        }
+
+        public void Favorito(object sender, EventArgs e)
+        {
+            var mi = ((Button)sender);
+            Celula cel = mi.CommandParameter as Celula;
+            if (cel.Favorito.Equals(Favorite))
+            {
+                cel.Favorito = FavoriteT;
+            }
+            else 
+            {
+                cel.Favorito = Favorite;
+            }
+            acessoBanco.atualizar(cel);
+            ConsultarCelulas();
+        }
+
+        public void FiltroFavorito(object sender, ToggledEventArgs toggled)
+        {
+            if(toggled.Value)
+            {
+                ListaCelulas.ItemsSource = Lista.Where(a => a.Favorito.Equals(FavoriteT)).ToList();
+            }
+            else{
+                ListaCelulas.ItemsSource = Lista;
+            }
         }
     }
 }

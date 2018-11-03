@@ -96,6 +96,7 @@
     <AndroidResource Include="Resources\drawable\favorite.png" />
     <AndroidResource Include="Resources\drawable\recycle.png" />
     <AndroidResource Include="Resources\drawable\edit.png" />
+    <AndroidResource Include="Resources\drawable\favoriteT.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

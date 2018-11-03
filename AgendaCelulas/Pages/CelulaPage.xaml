@@ -3,17 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="AgendaCelulas.Pages.CelulaPage">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <Label x:Name="lbTitulo" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
-            <Entry x:Name="txtNome" Placeholder="Celula"/>
-            <StackLayout Orientation="Horizontal">
-                <Entry x:Name="txtCep" Placeholder="Cep: Ex.53421180"/>
-                <Button Text="Buscar" Clicked="BuscarCep"/>
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="lbTitulo" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                <Entry x:Name="txtNome" Placeholder="Celula"/>
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="txtCep" Placeholder="Cep: Ex.53421180"/>
+                    <Button Text="Buscar" Clicked="BuscarCep"/>
+                </StackLayout>
+                <Entry x:Name="txtEndereco" Placeholder="Endereço"/>
+                <Label Text="Descrição"/>
+                <Editor x:Name="txtDescricao" HeightRequest="200"/>
+                <Button x:Name="btSalvar" Clicked="Salvar"/>
             </StackLayout>
-            <Entry x:Name="txtEndereco" Placeholder="Endereço"/>
-            <Label Text="Descrição"/>
-            <Editor x:Name="txtDescricao" HeightRequest="200"/>
-            <Button x:Name="btSalvar" Clicked="Salvar"/>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

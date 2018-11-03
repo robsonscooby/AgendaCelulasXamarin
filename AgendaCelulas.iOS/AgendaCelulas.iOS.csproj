@@ -164,6 +164,7 @@
     <BundleResource Include="Resources\favorite.png" />
     <BundleResource Include="Resources\recycle.png" />
     <BundleResource Include="Resources\edit.png" />
+    <BundleResource Include="Resources\favoriteT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\AgendaCelulas\AgendaCelulas.projitems" Label="Shared" />
