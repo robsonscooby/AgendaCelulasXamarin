@@ -2,22 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="AgendaCelulas.Pages.DetalhePage"
+             xmlns:local="clr-namespace:AgendaCelulas.Markups"
              Title="Detalhes">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding Nome}" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Cep:" FontAttributes="Bold"/>
-                <Label Text="{Binding Cep}"/>
+            <StackLayout Padding="10">
+                <Label Text="{Binding Nome}" HorizontalOptions="Center" FontAttributes="Bold">
+                    <Label.FontSize>
+                         <x:StaticExtension Member="local:AppConstants.NormalFontSize" />
+                    </Label.FontSize>
+                </Label>
             </StackLayout>
-            <StackLayout Orientation="Vertical">
-                <Label Text="Endereço:" FontAttributes="Bold"/>
-                <Label Text="{Binding Endereco}"/>
+            <StackLayout Padding="10">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Telefone:" FontAttributes="Bold">
+                        <Label.FontSize>
+                            <x:StaticExtension Member="local:AppConstants.MedioFontSize" />
+                        </Label.FontSize>
+                    </Label>
+                    <Label Text="{Binding Fone}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Cep:" FontAttributes="Bold">
+                        <Label.FontSize>
+                            <x:StaticExtension Member="local:AppConstants.MedioFontSize" />
+                        </Label.FontSize>
+                    </Label>
+                    <Label Text="{Binding Cep}"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Endereço:" FontAttributes="Bold">
+                        <Label.FontSize>
+                            <x:StaticExtension Member="local:AppConstants.MedioFontSize" />
+                        </Label.FontSize>
+                    </Label>
+                    <Label Text="{Binding Endereco}"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Descrição:" FontAttributes="Bold">
+                        <Label.FontSize>
+                            <x:StaticExtension Member="local:AppConstants.MedioFontSize" />
+                        </Label.FontSize>
+                    </Label>
+                    <Label Text="{Binding Descricao}" FontSize="14" FontAttributes="Bold"/>
+                </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Vertical">
-                <Label Text="Descrição:" FontAttributes="Bold"/>
-                <Label Text="{Binding Descricao}" FontSize="14" FontAttributes="Bold"/>
-            </StackLayout>   
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

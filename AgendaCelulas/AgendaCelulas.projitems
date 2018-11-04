@@ -52,11 +52,13 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Services\ConsultaCep.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Endereco.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Markups\AppConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)BD\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Markups\" />
   </ItemGroup>
 </Project>

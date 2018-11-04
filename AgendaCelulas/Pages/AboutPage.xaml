@@ -2,21 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="AgendaCelulas.Pages.AboutPage"
+             xmlns:local="clr-namespace:AgendaCelulas.Markups"
              Title="Sobre"
              Padding="20">
     <ContentPage.Content>
        <StackLayout Orientation="Vertical">
-            <Label Text="Instalado em:" FontAttributes="Bold" FontSize="Medium"/>
+            <Label Text="Instalado em:" FontAttributes="Bold">
+                <Label.FontSize>
+                    <x:StaticExtension Member="local:AppConstants.NormalFontSize"/>
+                </Label.FontSize>
+            </Label>
             <Label x:Name="txtInstalacao" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <Label x:Name="lbAcesso" 
-                   Text="Último acesso:" 
-                   FontAttributes="Bold" 
-                   FontSize="Medium"
-                   TextColor="Red"/>
+            <Label x:Name="lbAcesso" Text="Último acesso:" FontAttributes="Bold" TextColor="Red">
+                <Label.FontSize>
+                    <x:StaticExtension Member="local:AppConstants.NormalFontSize"/>
+                </Label.FontSize>
+            </Label>
             <Label x:Name="txtAcesso" 
                    VerticalOptions="Center"
                    HorizontalOptions="Center"
                    TextColor="Red"/>
+            <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand" 
+                   FontAttributes="Bold">
+                <Label.FontSize>
+                    <x:StaticExtension Member="local:AppConstants.NormalFontSize"/>
+                </Label.FontSize>
+                <Label.Text>
+                    <x:StaticExtension Member="local:AppConstants.Sobre"/>
+                </Label.Text>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AgendaCelulas.Markups"
              x:Class="AgendaCelulas.Pages.CelulaPage">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical">
-                <Label x:Name="lbTitulo" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                <Label x:Name="lbTitulo" HorizontalOptions="Center" FontAttributes="Bold">
+                    <Label.FontSize>
+                        <x:StaticExtension Member="local:AppConstants.NormalFontSize" />
+                    </Label.FontSize>
+                </Label>
                 <Entry x:Name="txtNome" Placeholder="Celula"/>
+                <Entry x:Name="txtFone" Placeholder="Telefone Ex.953384845"/>
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="txtCep" Placeholder="Cep: Ex.53421180"/>
                     <Button Text="Buscar" Clicked="BuscarCep"/>
                 </StackLayout>
                 <Entry x:Name="txtEndereco" Placeholder="Endereço"/>
                 <Label Text="Descrição"/>
-                <Editor x:Name="txtDescricao" HeightRequest="200" BackgroundColor="Silver"/>
+                <Editor x:Name="txtDescricao" BackgroundColor="Silver">
+                    <Editor.HeightRequest>
+                        <x:StaticExtension Member="local:AppConstants.BoxEditor" />
+                    </Editor.HeightRequest> 
+                </Editor>
                 <Button x:Name="btSalvar" Clicked="Salvar"/>
             </StackLayout>
         </ScrollView>

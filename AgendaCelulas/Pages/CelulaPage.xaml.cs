@@ -22,6 +22,7 @@ namespace AgendaCelulas.Pages
                 celula = new Celula();
                 celula = c;
                 txtNome.Text = celula.Nome;
+                txtFone.Text = celula.Fone;
                 txtCep.Text = celula.Cep;
                 txtEndereco.Text = celula.Endereco;
                 txtDescricao.Text = celula.Descricao;
@@ -41,6 +42,7 @@ namespace AgendaCelulas.Pages
                 celula = new Celula
                 {
                     Nome = txtNome.Text,
+                    Fone = txtFone.Text,
                     Cep = txtCep.Text,
                     Endereco = txtEndereco.Text,
                     Descricao = txtDescricao.Text
@@ -49,6 +51,7 @@ namespace AgendaCelulas.Pages
             }
             else{
                 celula.Nome = txtNome.Text;
+                celula.Fone = txtFone.Text;
                 celula.Cep = txtCep.Text;
                 celula.Endereco = txtEndereco.Text;
                 celula.Descricao = txtDescricao.Text;
@@ -75,8 +78,6 @@ namespace AgendaCelulas.Pages
                     {
                         DisplayAlert("Error", "Endereço não encontrado!", "OK");
                     }
-
-
                 }
                 catch (Exception ex)
                 {
@@ -92,7 +93,6 @@ namespace AgendaCelulas.Pages
             if (cep.Length != 8)
             {
                 DisplayAlert("ERRO", "CEP inválido! O cep deve conter 8 caracteres.", "OK");
-
                 valido = false;
             }
 
@@ -102,7 +102,6 @@ namespace AgendaCelulas.Pages
                 DisplayAlert("ERRO", "CEP inválido! O cep deve conter apenas números.", "OK");
                 valido = false;
             }
-
             return valido;
         }
     }

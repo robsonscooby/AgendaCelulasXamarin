@@ -11,6 +11,9 @@ namespace AgendaCelulas.Models
         [Column("nome")]
         public string Nome { get; set; }
 
+        [Column("fone")]
+        public string Fone { get; set; }
+
         [Column("cep")]
         public string Cep { get; set; }
 
