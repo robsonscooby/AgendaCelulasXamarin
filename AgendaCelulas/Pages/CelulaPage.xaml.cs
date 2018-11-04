@@ -41,20 +41,20 @@ namespace AgendaCelulas.Pages
             {
                 celula = new Celula
                 {
-                    Nome = txtNome.Text,
-                    Fone = txtFone.Text,
-                    Cep = txtCep.Text,
-                    Endereco = txtEndereco.Text,
-                    Descricao = txtDescricao.Text
+                    Nome = txtNome.Text.Trim(),
+                    Fone = txtFone.Text.Trim(),
+                    Cep = txtCep.Text.Trim(),
+                    Endereco = txtEndereco.Text.Trim(),
+                    Descricao = txtDescricao.Text.Trim()
                 };
                 acessoBanco.Cadastrar(celula);
             }
             else{
-                celula.Nome = txtNome.Text;
-                celula.Fone = txtFone.Text;
-                celula.Cep = txtCep.Text;
-                celula.Endereco = txtEndereco.Text;
-                celula.Descricao = txtDescricao.Text;
+                celula.Nome = txtNome.Text.Trim();
+                celula.Fone = txtFone.Text.Trim();
+                celula.Cep = txtCep.Text.Trim();
+                celula.Endereco = txtEndereco.Text.Trim();
+                celula.Descricao = txtDescricao.Text.Trim();
                 acessoBanco.atualizar(celula);
             }
 

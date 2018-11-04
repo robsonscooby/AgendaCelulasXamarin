@@ -65,7 +65,7 @@ namespace AgendaCelulas.Pages
 
         public void Pesquisar(object sender, TextChangedEventArgs e)
         {
-            ListaCelulas.ItemsSource = Lista.Where(a=> a.Nome.Contains(e.NewTextValue)).ToList();
+            ListaCelulas.ItemsSource = Lista.Where(a=> a.Nome.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
         }
 
         public void Favorito(object sender, EventArgs e)
